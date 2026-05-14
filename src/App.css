@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(font/PokemonSolidNormal.woff2);
+}
+
 body{
   background-color: #ebb089;
   padding: 10px;
@@ -12,9 +17,12 @@ img {
   box-sizing: border-box;
   min-width: 250px;
   height: 300px;
+  
   border: 8px solid #0d4493;
   background-color: #dee0e8;
   box-shadow: 0px 0px 10px 0px #365683;
+
+
 
 
   display: flex;
@@ -43,8 +51,10 @@ img {
 .name {
   margin: 0;
   flex-grow: 1;
-  padding-top: 15%;
-  font-size: larger;
+  font-size: xx-large;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  font-family: Pokemon;
 }
 
 img {
