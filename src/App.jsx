@@ -9,8 +9,6 @@ function App() {
   const [highest, setHighest] = useState(0);
   const [cardsList, setCardsList] = useState([]);
 
-  console.log(cardsList)
-
   const randomizedList = randomizeCards();
 
   function randomizeCards() {
@@ -37,37 +35,38 @@ function App() {
     }
   }
 
-  // useEffect(() => {
-  //   randomizeCards();
-  // }, [chosen])
-
   useEffect(() => {
     if (!didInit) {
+
       async function buildCardList(cardsData) {
         const cardsArray = [];
+
         for (const data of cardsData) {
           const response = await fetch(data.url);
           if (!response.ok) {
             throw new Error("Erro ao buscar imagens.");
           }
           const newCard = await response.json();
+
           const image = await fetch(newCard.sprites.front_default);
           const imageBlob = await image.blob();
           const imageURL = URL.createObjectURL(imageBlob);
           cardsArray.push({ "name": data.name, "pic": imageURL });
         }
 
-        setCardsList(cardsArray);
+        return cardsArray;
       }
 
       didInit = true;
+      
       fetch("https://pokeapi.co/api/v2/pokemon?limit=15&offset=0")
         .then(response => {
           if (!response.ok) {
             throw new Error("Erro ao buscar cartas.");
           }
           return response.json();
-        }).then(data => { buildCardList(data.results) })
+        }).then(data => buildCardList(data.results))
+        .then(builtArray => setCardsList(builtArray))
         .catch(error => console.error('Fetch error:', error));
     }
   }, [])
