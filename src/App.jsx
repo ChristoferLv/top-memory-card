@@ -5,28 +5,46 @@ import Card from './Card'
 let didInit = false;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [chosen, setChosen] = useState([]);
+  const [highest, setHighest] = useState(0);
   const [cardsList, setCardsList] = useState([]);
 
-  const chosen = [];
+  const randomizedList = randomizeCards();
+
+  function randomizeCards() {
+    const newArray = cardsList.slice();
+    for (var i = newArray.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = newArray[i];
+      newArray[i] = newArray[j];
+      newArray[j] = temp;
+    }
+    return newArray;
+  }
 
   function finishGame() {
-
+    setChosen([]);
   }
 
-  function setChosen(name) {
+  function pickCard(name) {
     if (chosen.includes(name)) { finishGame(); }
-    else { chosen.push(name) }
+    else {
+      setChosen([...chosen, name]);
+      if (chosen.length + 1 > highest)
+        setHighest(chosen.length + 1);
+    }
   }
 
-  console.log("cards", cardsList);
+  // useEffect(() => {
+  //   randomizeCards();
+  // }, [chosen])
 
   useEffect(() => {
     if (!didInit) {
       function buildCardList(cardsData) {
         const cardsArray = [];
         cardsData.forEach(element => {
-          cardsArray.push(<Card key={element.name} cardInfo={element.name} />)
+          cardsArray.push({ "name": element.name })
         });
         return cardsArray;
       }
@@ -44,8 +62,14 @@ function App() {
   }, [])
 
   return (
-    <div className='cards-grid'>
-      {cardsList}
+    <div className="game">
+      <div className="game-header">
+        <p>Correct guesses: {chosen.length}</p>
+        <p>Best: {highest}</p>
+      </div>
+      <div className='cards-grid'>
+        {randomizedList.map((card) => <Card key={card.name} cardInfo={card.name} pickCard={pickCard} />)}
+      </div>
     </div>
   )
 }

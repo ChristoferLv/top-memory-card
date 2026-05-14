@@ -1,5 +1,5 @@
-export default function Card({ cardInfo }) {
-    return <div className="card">
+export default function Card({ cards, cardInfo, pickCard }) {
+    return <div className="card" onClick={() => pickCard(cardInfo)}>
         <div className="picture">
             <img src="./0025Pikachu.webp" alt="" />
         </div>
