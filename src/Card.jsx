@@ -1,8 +1,8 @@
-export default function Card({ cards, cardInfo, pickCard }) {
-    return <div className="card" onClick={() => pickCard(cardInfo)}>
+export default function Card({ cardInfo, pickCard }) {
+    return <div className="card" onClick={() => pickCard(cardInfo.name)}>
         <div className="picture">
-            <img src="./0025Pikachu.webp" alt="" />
+            <img src={cardInfo.pic} alt="" />
         </div>
-        <p className="name">{cardInfo}</p>
+        <p className="name">{cardInfo.name}</p>
     </div>
 }
