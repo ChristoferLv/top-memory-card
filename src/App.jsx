@@ -75,8 +75,9 @@ function App() {
   return (
     <div className="game">
       <div className="game-header">
-        <p>Correct guesses: {chosen.length}</p>
-        <p>Best: {highest}</p>
+        <p className='title'>Pokemon Memory Game</p>
+        <p className='choises-resume'>Correct guesses: {chosen.length}</p>
+        <p className='choises-resume'>Best: {highest}</p>
       </div>
       <div className='cards-grid'>
         {randomizedList.map((card) => <Card key={card.name} cardInfo={card} pickCard={pickCard} />)}

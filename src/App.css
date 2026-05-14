@@ -1,9 +1,9 @@
 @font-face {
-    font-family: Pokemon;
-    src: url(font/PokemonSolidNormal.woff2);
+  font-family: Pokemon;
+  src: url(font/PokemonSolidNormal.woff2);
 }
 
-body{
+body {
   background-color: #ebb089;
   padding: 10px;
   overflow-x: hidden;
@@ -11,19 +11,44 @@ body{
 
 img {
   display: block;
+  margin: 0 auto;
+  object-fit: fill;
+  object-position: center;
+  width: 105%;
+  height: 105%;
+}
+
+.game-header{
+  margin-bottom: 30px;
+}
+
+.title{
+  margin: 0;
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.choises-resume{
+  font-size: xx-large;
+  margin: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 20px 40px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .card {
   box-sizing: border-box;
   min-width: 250px;
   height: 300px;
-  
+
   border: 8px solid #0d4493;
   background-color: #dee0e8;
   box-shadow: 0px 0px 10px 0px #365683;
-
-
-
 
   display: flex;
   flex-direction: column;
@@ -33,7 +58,7 @@ img {
   transition: transform 0.05s ease-out;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.1);
   transition: transform 0.02s ease-in;
 }
@@ -44,8 +69,6 @@ img {
   height: 70%;
   border: 2px solid black;
   border-radius: 10px;
-
-  /* background-image: url("./0025Pikachu.webp"); */
 }
 
 .name {
@@ -57,16 +80,3 @@ img {
   font-family: Pokemon;
 }
 
-img {
-  margin: 0 auto;
-  object-fit: fill;
-  object-position: center;
-  width: 105%;
-  height: 105%;
-}
-
-.cards-grid {
-  display: grid;
-  gap: 20px 40px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
