@@ -8,6 +8,17 @@ function App() {
   const [count, setCount] = useState(0)
   const [cardsList, setCardsList] = useState([]);
 
+  const chosen = [];
+
+  function finishGame() {
+
+  }
+
+  function setChosen(name) {
+    if (chosen.includes(name)) { finishGame(); }
+    else { chosen.push(name) }
+  }
+
   console.log("cards", cardsList);
 
   useEffect(() => {
@@ -27,14 +38,14 @@ function App() {
             throw new Error("Erro ao buscar cartas.");
           }
           return response.json();
-        }).then(data => {console.log(data);setCardsList(buildCardList(data.results))})
+        }).then(data => { console.log(data); setCardsList(buildCardList(data.results)) })
         .catch(error => console.error('Fetch error:', error));
     }
   }, [])
 
   return (
     <div className='cards-grid'>
-    {cardsList}
+      {cardsList}
     </div>
   )
 }
