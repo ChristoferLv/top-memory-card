@@ -46,6 +46,10 @@ A Pokemon-themed memory card game. Click a card only once; each correct pick inc
 - JavaScript
 - HTML and CSS
 
+## Visualization
+
+<img width="1900" height="1438" alt="localhost_5173_ (2)" src="https://github.com/user-attachments/assets/1d89e4af-eb34-4bd1-b59c-13c952fb1f7a" />
+
 ---
 
 Project built following: [The Odin Project - Memory Card](https://www.theodinproject.com/lessons/node-path-react-new-memory-card)
