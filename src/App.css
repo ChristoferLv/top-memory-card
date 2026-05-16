@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #ebb089;
+  background-image: url("/background.webp");
+  background-size: cover;
   padding: 10px;
   overflow-x: hidden;
 }
