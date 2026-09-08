@@ -48,7 +48,7 @@ A Pokemon-themed memory card game. Click a card only once; each correct pick inc
 
 ## Visualization
 
-<img width="1900" height="1438" alt="localhost_5173_ (2)" src="https://github.com/user-attachments/assets/1d89e4af-eb34-4bd1-b59c-13c952fb1f7a" />
+<img width="1910" height="1438" alt="memory_card_game_screenshot" src="https://github.com/user-attachments/assets/f587e183-79eb-41bc-8354-2b5500fe21cf" />
 
 ---
 
