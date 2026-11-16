@@ -1,6 +1,6 @@
 # Memory Card
 
-Memory card project developed as part of the React course from [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-memory-card), focused on state, effects, and rendering lists.
+Memory card project developed as part of the React course from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/react), focused on state, effects, and rendering lists.
 
 ## Project Objective
 
